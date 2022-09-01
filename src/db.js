@@ -18,5 +18,6 @@ const DB = new Sequelize(`postgres://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}
     timestamps: false
 }})
 
+
 module.exports = DB
 

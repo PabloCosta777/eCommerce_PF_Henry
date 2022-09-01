@@ -4,6 +4,7 @@ let product= require('./product')
 let user =require('./user')
 
 
+
 router.use('/product',product)
 router.use('/user',user)
 
