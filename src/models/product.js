@@ -3,11 +3,10 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../db");
 
 const product = sequelize.define("product", {
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
+  
+  marca: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   model: {
     type: DataTypes.STRING,
@@ -17,30 +16,22 @@ const product = sequelize.define("product", {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  color: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   ram: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  internalstorage: {
+  camera: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  frontcam: {
+  image: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  backcam: {
-    type: DataTypes.STRING,
+  stock: {
+    type: DataTypes.INTEGER,
     allowNull: false
   },
-  display: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
 });
 
 module.exports = product;
