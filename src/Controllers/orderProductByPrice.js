@@ -1,7 +1,7 @@
-const { Product } = require('../db')
+const Product = require('../models/product')
 
 const orderProductByPrice = async (req, res) => {
-    let priceOrder = req.params.priceOrder;
+    let priceOrder = req.body.priceOrder;
     const allProducts = await Product.findAll()
 
     try {
@@ -23,6 +23,4 @@ const orderProductByPrice = async (req, res) => {
     }
 }
 
-module.exports = {
-    orderProductByPrice
-}
+module.exports = orderProductByPrice;
