@@ -4,18 +4,18 @@ const  Product = require('../models/product');
 const Brand = require('../models/brand');
 
 router.post('/', async(req, res) => {
-    const { model, price, color, ram, internalstorage, frontcam, backcam, display, brand } = req.body;
+    const { marca, model, price, color, ram, camera, image, brand } = req.body;
     
     try{
         let createProduct = await Product.create({
+            marca,
             model, 
             price, 
             color, 
             ram, 
-            internalstorage, 
-            frontcam, 
-            backcam, 
-            display
+            image, 
+            camera, 
+            
         })
 
         let brandDB = await Brand.findByPk(brand);
