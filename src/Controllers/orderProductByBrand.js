@@ -1,9 +1,9 @@
 const Product = require('../models/product');
 
 const orderProductByBrand = async (req, res) => {
-    let nameOrder = req.body.nameOrder;
+    let {nameOrder} = req.params;
     const allProducts = await Product.findAll()
-
+    console.log(nameOrder)
     try {
         nameOrder === 'A-Z' ?
             allProducts.sort(function (a, b) {

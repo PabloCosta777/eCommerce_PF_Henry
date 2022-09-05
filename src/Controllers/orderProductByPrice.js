@@ -1,12 +1,11 @@
 const Product = require('../models/product')
 
 const orderProductByPrice = async (req, res) => {
-    let priceOrder = req.body.priceOrder;
+    let {priceOrder} = req.params;
     const allProducts = await Product.findAll()
-
+    console.log(priceOrder)
     try {
-        if (priceOrder === 'ASC') {
-
+        priceOrder === 'ASC' ?
             allProducts.sort(function (a, b) {
                 if (a.price > b.price) {
                     return 1;
@@ -15,8 +14,16 @@ const orderProductByPrice = async (req, res) => {
                     return -1;
                 }
                 return 0;
+            }) :
+            allProducts.sort(function (a, b) {
+                if (a.price > b.price) {
+                    return -1;
+                }
+                if (b.price > a.price) {
+                    return 1;
+                }
+                return 0;
             })
-        }
         res.send(allProducts)
     } catch (e) {
         res.send(e)
