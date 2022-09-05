@@ -6,7 +6,7 @@ require('./Models/relations')
 const chargeDB = require("./Controllers/ProductChargeDB.js")
 
 app.listen(PORT,()=>{
-     db.sync({force:true})
+     db.sync({force:false})
     .then(()=>chargeDB())
     .then(console.log('Conectado a la BBDD'))
     .then(console.log(`Escuchando en el puerto ${PORT}`))
